@@ -4,3 +4,5 @@ temp/
 *.pyc
 *.pyo
 */__pycache__/
+instance_segmentation/test_samples
+*.pt

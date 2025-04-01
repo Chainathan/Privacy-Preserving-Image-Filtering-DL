@@ -1,0 +1,7 @@
+{"time":"2025-03-23T21:04:47.6013285-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"C:\\Users\\Sai\\Documents\\Neu\\Masters_Project\\PerceptionPrivacy\\wandb\\run-20250323_210447-ravya5w2\\logs\\debug-core.log"}
+{"time":"2025-03-23T21:04:47.7121734-04:00","level":"INFO","msg":"created new stream","id":"ravya5w2"}
+{"time":"2025-03-23T21:04:47.7121734-04:00","level":"INFO","msg":"stream: started","id":"ravya5w2"}
+{"time":"2025-03-23T21:04:47.7121734-04:00","level":"INFO","msg":"sender: started","stream_id":"ravya5w2"}
+{"time":"2025-03-23T21:04:47.7121734-04:00","level":"INFO","msg":"handler: started","stream_id":"ravya5w2"}
+{"time":"2025-03-23T21:04:47.7121734-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"ravya5w2"}
+{"time":"2025-03-23T21:04:48.0545277-04:00","level":"INFO","msg":"Starting system monitor"}

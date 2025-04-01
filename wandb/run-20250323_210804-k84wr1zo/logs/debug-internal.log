@@ -1,0 +1,18 @@
+{"time":"2025-03-23T21:08:04.6635362-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"C:\\Users\\Sai\\Documents\\Neu\\Masters_Project\\PerceptionPrivacy\\wandb\\run-20250323_210804-k84wr1zo\\logs\\debug-core.log"}
+{"time":"2025-03-23T21:08:04.770628-04:00","level":"INFO","msg":"created new stream","id":"k84wr1zo"}
+{"time":"2025-03-23T21:08:04.770628-04:00","level":"INFO","msg":"stream: started","id":"k84wr1zo"}
+{"time":"2025-03-23T21:08:04.770628-04:00","level":"INFO","msg":"sender: started","stream_id":"k84wr1zo"}
+{"time":"2025-03-23T21:08:04.770628-04:00","level":"INFO","msg":"handler: started","stream_id":"k84wr1zo"}
+{"time":"2025-03-23T21:08:04.770628-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"k84wr1zo"}
+{"time":"2025-03-23T21:08:05.142834-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-23T21:08:20.154613-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:08:35.155345-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:08:50.1547623-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:09:05.1548808-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:09:20.1553263-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:09:35.1540434-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:09:50.1529715-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:10:05.1548266-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:10:20.154899-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:10:35.1526102-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}
+{"time":"2025-03-23T21:10:50.1547063-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 34500"}

@@ -1,0 +1,55 @@
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed ✅
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "c:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\instance_segmentation\yolov8-seg\yolov8-seg-train.py", line 7, in <module>
+    model.train(
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\engine\model.py", line 791, in train
+    self.trainer.train()
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\engine\trainer.py", line 211, in train
+    self._do_train(world_size)
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\engine\trainer.py", line 326, in _do_train
+    self._setup_train(world_size)
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\engine\trainer.py", line 290, in _setup_train
+    self.train_loader = self.get_dataloader(self.trainset, batch_size=batch_size, rank=LOCAL_RANK, mode="train")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\models\yolo\detect\train.py", line 82, in get_dataloader
+    dataset = self.build_dataset(dataset_path, mode, batch_size)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\models\yolo\detect\train.py", line 65, in build_dataset
+    return build_yolo_dataset(self.args, img_path, batch, self.data, mode=mode, rect=mode == "val", stride=gs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\data\build.py", line 109, in build_yolo_dataset
+    return dataset(
+           ^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\data\dataset.py", line 86, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\data\base.py", line 108, in __init__
+    self.labels = self.get_labels()
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\data\dataset.py", line 170, in get_labels
+    assert cache["hash"] == get_hash(self.label_files + self.im_files)  # identical hash
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\data\utils.py", line 52, in get_hash
+    size = sum(os.path.getsize(p) for p in paths if os.path.exists(p))  # sizes
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sai\AppData\Local\Programs\Python\Python311\Lib\site-packages\ultralytics\data\utils.py", line 52, in <genexpr>
+    size = sum(os.path.getsize(p) for p in paths if os.path.exists(p))  # sizes
+                                                    ^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 19, in exists
+KeyboardInterrupt
+[0m

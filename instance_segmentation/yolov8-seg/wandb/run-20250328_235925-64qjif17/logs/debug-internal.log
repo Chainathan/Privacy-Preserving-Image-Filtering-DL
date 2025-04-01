@@ -1,0 +1,13 @@
+{"time":"2025-03-28T23:59:25.1527333-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"c:\\Users\\Sai\\Documents\\Neu\\Masters_Project\\PerceptionPrivacy\\instance_segmentation\\yolov8-seg\\wandb\\run-20250328_235925-64qjif17\\logs\\debug-core.log"}
+{"time":"2025-03-28T23:59:25.2639287-04:00","level":"INFO","msg":"created new stream","id":"64qjif17"}
+{"time":"2025-03-28T23:59:25.2649259-04:00","level":"INFO","msg":"stream: started","id":"64qjif17"}
+{"time":"2025-03-28T23:59:25.2649259-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"64qjif17"}
+{"time":"2025-03-28T23:59:25.2649259-04:00","level":"INFO","msg":"handler: started","stream_id":"64qjif17"}
+{"time":"2025-03-28T23:59:25.2649259-04:00","level":"INFO","msg":"sender: started","stream_id":"64qjif17"}
+{"time":"2025-03-28T23:59:25.7877388-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T06:08:51.4205567-04:00","level":"WARN","msg":"sender: taking a long time","seconds":10788.4046929,"work":"WorkRecord(*service_go_proto.Request_StopStatus); Control(local:true  mailbox_slot:\"3eiwtnbpd5q5\"  connection_id:\"127.0.0.1:55928\")"}
+{"time":"2025-03-29T06:08:51.4246303-04:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/chainathanss/privacy-segmentation/64qjif17/file_stream\": context deadline exceeded"}
+{"time":"2025-03-29T06:08:51.4215556-04:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-03-29T06:08:53.8999581-04:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.0.0.22:57440->35.186.228.49:443: wsarecv: An existing connection was forcibly closed by the remote host."}
+{"time":"2025-03-29T06:08:58.4762587-04:00","level":"INFO","msg":"sender: succeeded after taking longer than expected","seconds":10796.2957466,"work":"WorkRecord(*service_go_proto.Request_StopStatus); Control(local:true  mailbox_slot:\"3eiwtnbpd5q5\"  connection_id:\"127.0.0.1:55928\")"}
+{"time":"2025-03-29T11:36:33.6372093-04:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.0.0.22:54170->35.186.228.49:443: wsarecv: An existing connection was forcibly closed by the remote host."}

@@ -1,0 +1,8 @@
+{"time":"2025-03-23T21:05:04.654668-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"C:\\Users\\Sai\\Documents\\Neu\\Masters_Project\\PerceptionPrivacy\\wandb\\run-20250323_210504-th9dtdmx\\logs\\debug-core.log"}
+{"time":"2025-03-23T21:05:04.7610687-04:00","level":"INFO","msg":"created new stream","id":"th9dtdmx"}
+{"time":"2025-03-23T21:05:04.7610687-04:00","level":"INFO","msg":"stream: started","id":"th9dtdmx"}
+{"time":"2025-03-23T21:05:04.7610687-04:00","level":"INFO","msg":"handler: started","stream_id":"th9dtdmx"}
+{"time":"2025-03-23T21:05:04.7610687-04:00","level":"INFO","msg":"sender: started","stream_id":"th9dtdmx"}
+{"time":"2025-03-23T21:05:04.7610687-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"th9dtdmx"}
+{"time":"2025-03-23T21:05:04.9798295-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-23T21:05:19.9904499-04:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 30648"}

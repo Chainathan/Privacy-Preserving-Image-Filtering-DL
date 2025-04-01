@@ -1,0 +1,17 @@
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed
+train: Scanning C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id\labels\train... 30448 images, 0 backgrounds, 0 corrupt: 100%|██████████| 30448/30448 [00:25<00:00, 1179.02it/s]
+[34m[1mtrain: [0mNew cache created: C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id\labels\train.cache
+val: Scanning C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id\labels\val... 7613 images, 0 backgrounds, 0 corrupt: 100%|██████████| 7613/7613 [00:06<00:00, 1116.32it/s]
+[34m[1mval: [0mNew cache created: C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id\labels\val.cache
+Plotting labels to privacy-segmentation\yolov8n\labels.jpg...
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[0m SGD(lr=0.01, momentum=0.9) with parameter groups 66 weight(decay=0.0), 77 weight(decay=0.0005), 76 bias(decay=0.0)
+Image sizes 800 train, 800 val
+Using 8 dataloader workers
+Logging results to [1mprivacy-segmentation\yolov8n[0m
+Starting training for 100 epochs...
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss  Instances       Size
+      1/100      4.21G     0.5742      1.181      2.593      0.995         48        800:  22%|██▏       | 415/1903 [01:49<06:31,  3.80it/s]

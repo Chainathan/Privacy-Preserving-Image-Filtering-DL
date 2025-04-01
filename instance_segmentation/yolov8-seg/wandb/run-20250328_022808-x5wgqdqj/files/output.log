@@ -1,0 +1,25 @@
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed
+train: Scanning C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id\labels\train.cache... 30448 images, 0 backgrounds, 0 corrupt: 100%|██████████| 30448/30448 [00:00<?, ?it/s]
+val: Scanning C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id\labels\val.cache... 7613 images, 0 backgrounds, 0 corrupt: 100%|██████████| 7613/7613 [00:00<?, ?it/s]
+Plotting labels to privacy-segmentation\yolov8n-adam-flip-640-3e4-mosaic-b16\labels.jpg...
+[34m[1moptimizer:[0m Adam(lr=0.0003, momentum=0.937) with parameter groups 66 weight(decay=0.0), 77 weight(decay=0.0005), 76 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mprivacy-segmentation\yolov8n-adam-flip-640-3e4-mosaic-b16[0m
+Starting training for 75 epochs...
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss  Instances       Size
+       1/75      2.77G      0.516     0.7842     0.7148     0.9123         46        640: 100%|██████████| 1903/1903 [06:29<00:00,  4.89it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100%|██████████| 238/238 [01:09<00:00,  3.41it/s]
+                   all       7613      11797      0.959      0.737       0.77      0.711      0.934      0.728      0.752      0.628
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss  Instances       Size
+       2/75      4.34G     0.4515     0.6114     0.4625     0.8878         30        640: 100%|██████████| 1903/1903 [06:00<00:00,  5.27it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100%|██████████| 238/238 [01:11<00:00,  3.32it/s]
+                   all       7613      11797      0.954      0.754      0.779      0.739      0.957      0.753      0.778      0.704
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss  Instances       Size
+       3/75      4.34G     0.4309     0.5695     0.4153     0.8813         37        640:  51%|█████     | 974/1903 [03:08<03:33,  4.36it/s]

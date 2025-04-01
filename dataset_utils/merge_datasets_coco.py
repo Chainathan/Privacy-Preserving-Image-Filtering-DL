@@ -14,11 +14,26 @@ project/
 │       └── annotations.json
 ├── merged_dataset.json
 '''
-# Dataset list: (new_category_name, path_to_json, relative_image_folder)
+BASE_PATH = r"C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes"
+
+CAT_NAME_1 = "license_plate"
+JSON_PATH_1 = os.path.join(BASE_PATH, "CCPD2019", "ccpd_coco_segmentation.json")
+IMAGE_FOLDER_1 = "CCPD2019/images"
+
+CAT_NAME_2 = "screen"
+JSON_PATH_2 = os.path.join(BASE_PATH, "Screen", "screen_coco_segmentation_balanced.json")
+IMAGE_FOLDER_2 = "Screen/images_balanced"
+
+CAT_NAME_3 = "id_card"
+JSON_PATH_3 = os.path.join(BASE_PATH, "midv500_data", "midv500_coco_rle_segmentation.json")
+IMAGE_FOLDER_3 = "midv500_data/images"
+
+OUTPUT_JSON = os.path.join(BASE_PATH, "merged_dataset_coco_balanced.json")
+
 datasets = [
-    ("screen", "data/screens/annotations.json", "screens/images"),
-    ("license_plate", "data/plates/annotations.json", "plates/images"),
-    ("id_card", "data/id_cards/annotations.json", "id_cards/images"),
+    (CAT_NAME_1, JSON_PATH_1, IMAGE_FOLDER_1),
+    (CAT_NAME_2, JSON_PATH_2, IMAGE_FOLDER_2),
+    (CAT_NAME_3, JSON_PATH_3, IMAGE_FOLDER_3),
 ]
 
 # COCO format merged output
@@ -50,7 +65,8 @@ for new_cat_id, (cat_name, json_path, rel_img_folder) in enumerate(datasets, sta
         old_id = img["id"]
         new_id = old_id + image_id_offset
         img["id"] = new_id
-        img["file_name"] = os.path.join(rel_img_folder, img["file_name"])
+        # img["file_name"] = os.path.join(rel_img_folder, img["file_name"])
+        img["file_name"] = f"{rel_img_folder}/{img['file_name']}"
         merged["images"].append(img)
         image_id_map[old_id] = new_id
 
@@ -65,8 +81,7 @@ for new_cat_id, (cat_name, json_path, rel_img_folder) in enumerate(datasets, sta
     annotation_id_offset = max(ann["id"] for ann in data["annotations"]) + 1
 
 # Save merged annotation file
-output_path = "merged_dataset.json"
-with open(output_path, "w") as f:
+with open(OUTPUT_JSON, "w") as f:
     json.dump(merged, f)
 
-print(f"Merged dataset saved to: {output_path}")
+print(f"Merged dataset saved to: {OUTPUT_JSON}")
