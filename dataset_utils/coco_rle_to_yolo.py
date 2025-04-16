@@ -8,15 +8,42 @@ from tqdm import tqdm
 from pycocotools import mask as maskUtils
 from collections import defaultdict
 
-# --- CONFIG ---
-COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\merged_dataset_coco_balanced.json'
-IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes'
-OUTPUT_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id'
+### WARNING ###
+# COPY IMAGES MIGHT BE COMMENTED OUT FOR TESTING PURPOSES
+# UNCOMMENT THE SHUTIL.COPY2() LINE TO ACTUALLY COPY IMAGES
+# names: ["license_plate", 'id_card']
 
-# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen\screen_coco_segmentation.json'
-# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen\images'
-# OUTPUT_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen_yolo'
-SPLIT_RATIO = 0.8  # Train/Val split
+# --- CONFIG ---
+# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\merged_dataset_coco_balanced.json'
+# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes'
+# OUTPUT_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id'
+
+# License Plate Dataset
+# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\CCPD2019\ccpd_coco_segmentation.json'
+# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\CCPD2019\images'
+
+# ID Card Dataset
+# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\midv500_data\midv500_coco_rle_segmentation.json'
+# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\midv500_data\images'
+
+# Credit Card Dataset
+# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Credit_Cards\creditcard_train_segmentation.json'
+# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Credit_Cards\images\train'
+
+# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Credit_Cards\creditcard_val_merged.json'
+# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Credit_Cards\images\val'
+
+# Screen
+# COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen\balanced_clean\train.json'
+# IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen\balanced_clean\images\train'
+
+COCO_JSON = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen\balanced_clean\val.json'
+IMAGES_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\classes\Screen\balanced_clean\images\val'
+
+OUTPUT_DIR = r'C:\Users\Sai\Documents\Neu\Masters_Project\PerceptionPrivacy\datasets\yolo_lp_screen_id'
+SPLIT_RATIO = 0
+CLASS_ID = 2 # Optional: Specify a class ID to keep the YOLO class ID as a constant
+
 SEED = 42
 
 # --- Create YOLOv8 directory structure ---
@@ -91,6 +118,7 @@ for image_id, anns in tqdm(image_to_anns.items()):
     for ann in anns:
         seg = ann['segmentation']
         if not isinstance(seg, dict) or 'counts' not in seg:
+            print(f"Skipping invalid segmentation for image {file_name}")
             continue
 
         rle = seg.copy()
@@ -104,6 +132,7 @@ for image_id, anns in tqdm(image_to_anns.items()):
         for contour in contours:
             contour = contour.squeeze()
             if contour.ndim != 2 or len(contour) < 3:
+                # print(f"Skipping invalid contour for image {file_name}")
                 continue
 
             # Normalize points
@@ -113,11 +142,15 @@ for image_id, anns in tqdm(image_to_anns.items()):
                 norm_y = y / height
                 norm_coords.extend([round(norm_x, 6), round(norm_y, 6)])
 
-            class_id = ann['category_id'] - 1  # COCO is 1-indexed, YOLO is 0-indexed
+            if CLASS_ID is None:
+                class_id = ann['category_id'] - 1  # COCO is 1-indexed, YOLO is 0-indexed
+            else:
+                class_id = CLASS_ID
             line = f"{class_id} " + " ".join(map(str, norm_coords))
             lines.append(line)
 
     if not lines:
+        print(f"No valid masks for image {file_name}, skipping...")
         continue  # Skip images with no valid masks
 
     file_name = os.path.basename(file_name)

@@ -6,3 +6,11 @@ temp/
 */__pycache__/
 instance_segmentation/test_samples
 *.pt
+/instance_segmentation/yolo-seg/runs
+/instance_segmentation/yolo-seg/privacy-segmentation
+/instance_segmentation/yolo-seg/wandb
+/instance_segmentation/yolov8-seg/privacy-segmentation
+/pii_token_classification/test_distilbert_wnut
+/privacy-segmentation/yolov8s-finetune-balanced
+/pii_token_classification/wandb
+/instance_segmentation/yolov8-seg/wandb

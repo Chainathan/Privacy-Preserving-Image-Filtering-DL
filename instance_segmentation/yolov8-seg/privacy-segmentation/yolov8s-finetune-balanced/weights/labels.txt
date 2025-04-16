@@ -1,3 +1,0 @@
-license_plate
-screen
-id_card

@@ -1,8 +1,0 @@
-{"time":"2025-03-25T01:57:55.2155154-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"c:\\Users\\Sai\\Documents\\Neu\\Masters_Project\\PerceptionPrivacy\\instance_segmentation\\yolov8-seg\\wandb\\run-20250325_015755-y0g9em7l\\logs\\debug-core.log"}
-{"time":"2025-03-25T01:57:55.3299696-04:00","level":"INFO","msg":"created new stream","id":"y0g9em7l"}
-{"time":"2025-03-25T01:57:55.3299696-04:00","level":"INFO","msg":"stream: started","id":"y0g9em7l"}
-{"time":"2025-03-25T01:57:55.3304791-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"y0g9em7l"}
-{"time":"2025-03-25T01:57:55.3299696-04:00","level":"INFO","msg":"sender: started","stream_id":"y0g9em7l"}
-{"time":"2025-03-25T01:57:55.3299696-04:00","level":"INFO","msg":"handler: started","stream_id":"y0g9em7l"}
-{"time":"2025-03-25T01:57:55.5926925-04:00","level":"INFO","msg":"Starting system monitor"}
-{"time":"2025-03-25T02:01:57.0582264-04:00","level":"INFO","msg":"Pausing system monitor"}
