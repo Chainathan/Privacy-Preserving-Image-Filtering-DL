@@ -14,3 +14,6 @@ instance_segmentation/test_samples
 /privacy-segmentation/yolov8s-finetune-balanced
 /pii_token_classification/wandb
 /instance_segmentation/yolov8-seg/wandb
+/pii_token_classification/config.py
+/wandb
+/pii_token_classification/results
